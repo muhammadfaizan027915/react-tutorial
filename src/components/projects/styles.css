@@ -1,0 +1,9 @@
+.projectsContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.projects-listContainer {
+  display: flex;
+  flex-flow: row wrap;
+}
