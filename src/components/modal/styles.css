@@ -1,0 +1,28 @@
+.modalBackdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(78, 78, 78, 0.329);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.modalContainer {
+  height: 300px;
+  width: 400px;
+  padding: 1rem;
+  background-color: white;
+}
+
+.message {
+  text-align: center;
+}
+
+.closeBtn {
+  padding: 0.5rem 1rem;
+  background-color: cornflowerblue;
+}
