@@ -1,0 +1,17 @@
+.heroContainer {
+  margin: 0 auto;
+  width: fit-content;
+  position: relative;
+}
+
+.heroTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heroImage {
+  width: 1500px;
+  height: 800px;
+}
