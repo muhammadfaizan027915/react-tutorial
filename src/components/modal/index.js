@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./styles.css";
 const Modal = ({ message, isOpen, onClose }) => {
   return (

@@ -2,6 +2,7 @@ import Header from "./components/header";
 import HeroImage from "./components/heroImage";
 import Modal from "./components/modal";
 import Projects from "./components/projects";
+import RegistrationForm from './components/registrationForm'
 import { useState } from "react";
 
 const projectsList = [
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header />
       <HeroImage
         url={"https://www.w3schools.com/w3images/architect.jpg"}
         title={"BR Arcitects"}
@@ -50,13 +51,15 @@ function App() {
         title={"AR Solutions"}
       />
 
-      <Projects projectsList={projectsList} />
-      <Modal
+      <Projects projectsList={projectsList} /> */}
+
+      <RegistrationForm />
+      {/* <Modal
         message={"Do you realy want to exit an application"}
         isOpen={isOpen}
         onClose={onClose}
       />
-      <button onClick={onOpen}>Open Modal</button>
+      <button onClick={onOpen}>Open Modal</button> */}
     </>
   );
 }
