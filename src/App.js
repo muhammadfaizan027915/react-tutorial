@@ -2,7 +2,7 @@ import Header from "./components/header";
 import HeroImage from "./components/heroImage";
 import Modal from "./components/modal";
 import Projects from "./components/projects";
-import RegistrationForm from './components/registrationForm'
+import RegistrationForm from "./components/registrationForm";
 import { useState } from "react";
 
 const projectsList = [
@@ -38,6 +38,35 @@ function App() {
 
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
+
+  // Destructuring the Objects
+  // const nameKey = "name";
+
+  // const student = {
+  //   [nameKey]: "Muhammad Faizan",
+  //   age: 20,
+  //   skills: ["React", "React native", "MERN"],
+  //   activeStatus: false,
+  // };
+
+  // const { age, name, activeStatus, skills } = student;
+
+  // Rest   operator in Object
+  // const { age, name, ...restdata } = student;
+
+  // Spread Operator
+  // const copyStudent = {...student, name: 'Ali Abdullah', hobby: 'Book reading'};
+
+  // Destructuring an array.
+  // const skills = ["React", "React native", "Express", "Mongo DB", "Node Js"];
+  // const [skill1, skill2, skill3] = skills;
+
+  // Rest operator in array
+  // const [firstSkill, ...restSkills] = skills;
+
+  // Spread operator in array
+  // const copySkills = [...skills, 'Next Js', 'JQuery', 'Vanila javascript'];
+
 
   return (
     <>
