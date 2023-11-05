@@ -3,7 +3,7 @@ import HeroImage from "./components/heroImage";
 import Modal from "./components/modal";
 import Projects from "./components/projects";
 import RegistrationForm from "./components/registrationForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const projectsList = [
   {
@@ -35,6 +35,8 @@ const projectsList = [
 
 function App() {
   const [isOpen, setOpen] = useState(false);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
 
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
@@ -67,6 +69,16 @@ function App() {
   // Spread operator in array
   // const copySkills = [...skills, 'Next Js', 'JQuery', 'Vanila javascript'];
 
+  // Data fetching using fetch api and useEffect
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        if (response.status <= 400) return response.json();
+        throw new Error("Data not found!");
+      })
+      .then((data) => setData(data))
+      .catch(() => setError(true));
+  }, []);
 
   return (
     <>
@@ -83,12 +95,15 @@ function App() {
       <Projects projectsList={projectsList} /> */}
 
       <RegistrationForm />
-      {/* <Modal
-        message={"Do you realy want to exit an application"}
-        isOpen={isOpen}
-        onClose={onClose}
-      />
-      <button onClick={onOpen}>Open Modal</button> */}
+      <Modal message={"Do you realy want to exit an application"} isOpen={isOpen} onClose={onClose} />
+      <button onClick={onOpen}>Open Modal</button>
+      {error && <p>Something went wrong</p>}
+      {data.map((post) => (
+        <>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+        </>
+      ))}
     </>
   );
 }
